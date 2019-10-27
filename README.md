@@ -2,7 +2,7 @@
 
 A React app to play with Spotify's web api.
 </br>This is Node.js server for authenticating user's Spotify accounts.
-Use this in conjunction with [Musipp Frontend](https://github.com/fikribasa/anekamusik-front).
+Use this in conjunction with [Musipp Frontend](https://github.com/fikribasa/musipp-front).
 
 ## Instructions:
 
@@ -21,12 +21,13 @@ $ nano .env
 ```
 
 ```
-SERVER_PORT = YOUR-PORT
 
-DB_HOST = "YOU-DB-HOST"
-DB_USER = "YOUR-DB-USER"
-DB_PASSWORD = "YOUR-DB-PASSWORD"
-DB_NAME = "YOUR-DB-NAME"
+CLIENT_ID= Your Spotify Client ID
+CLIENT_SECRET= Your Spotify Secret ID
+FRONTEND_URI= Your Frontend URI
+REDIRECT_URI= 'Your Redirect URI
+LOGIN_URI= Your Login URI
+
 ```
 
 </br>
