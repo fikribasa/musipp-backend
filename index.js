@@ -10,7 +10,6 @@ let REDIRECT_URI = process.env.REDIRECT_URI || "http://localhost:8888/callback";
 let FRONTEND_URI = process.env.FRONTEND_URI || "http://localhost:3000";
 const PORT = process.env.PORT || 8888;
 
-
 const express = require("express");
 const request = require("request");
 const cors = require("cors");
@@ -57,10 +56,10 @@ if (cluster.isMaster) {
   const app = express();
 
   // Priority serve any static files.
-  app.use(express.static(path.resolve(__dirname, "../client/build")));
+  app.use(express.static(path.resolve(__dirname, "./public/index.html")));
 
   app
-    .use(express.static(path.resolve(__dirname, "../client/build")))
+    .use(express.static(path.resolve(__dirname, "./public/index.html")))
     .use(cors())
     .use(cookieParser())
     .use(
@@ -73,7 +72,7 @@ if (cluster.isMaster) {
         ]
       })
     )
-    .use(express.static(path.resolve(__dirname, "../client/build")));
+    .use(express.static(path.resolve(__dirname, "./public/index.html")));
 
   app.get("/", function(req, res) {
     res.render(path.resolve(__dirname, "./public/index.html"));
